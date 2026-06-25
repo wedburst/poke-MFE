@@ -2,6 +2,8 @@
 
 A Senior Frontend technical challenge implementing a Pokemon application using **Module Federation + Vite + React**.
 
+Repositorio: https://github.com/wedburst/poke-MFE/tree/master
+
 ---
 
 ## Credenciales de acceso
@@ -27,7 +29,7 @@ Solo se exige que ambos campos estén completos. El usuario queda guardado en `l
 ### 1. Clonar e instalar dependencias
 
 ```bash
-git clone <url-del-repo>
+git clone https://github.com/wedburst/poke-MFE/
 cd poke-mf
 npm install
 ```
