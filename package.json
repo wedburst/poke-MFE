@@ -1,0 +1,15 @@
+{
+  "name": "pokemon-microfrontends",
+  "private": true,
+  "workspaces": ["shell", "mf-detail", "mf-history"],
+  "scripts": {
+    "build:remotes": "npm run build --workspace=mf-detail && npm run build --workspace=mf-history",
+    "build": "npm run build:remotes && npm run build --workspace=shell",
+    "dev": "npm run build:remotes && concurrently -n MF-DETAIL,MF-HISTORY,SHELL -c red,green,blue \"npm run preview --workspace=mf-detail\" \"npm run preview --workspace=mf-history\" \"npm run dev --workspace=shell\"",
+    "preview": "npm run build && concurrently -n MF-DETAIL,MF-HISTORY,SHELL -c red,green,blue \"npm run preview --workspace=mf-detail\" \"npm run preview --workspace=mf-history\" \"npm run preview --workspace=shell\"",
+    "test": "npm run test --workspace=shell && npm run test --workspace=mf-detail && npm run test --workspace=mf-history"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
